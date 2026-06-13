@@ -27,7 +27,7 @@ export function NomogramLayout({
   onPlrChange,
 }: Props) {
   return (
-    <div className="flex flex-col lg:flex-row flex-1 overflow-hidden min-h-0">
+    <div className="flex flex-col lg:flex-row flex-1 min-h-0">
       <LeftPanel
         inputs={inputs}
         result={result}

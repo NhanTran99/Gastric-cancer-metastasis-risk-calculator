@@ -24,7 +24,7 @@ export function RightPanel({ inputs, result, heatmapGrid, contourLines }: Props)
   const { probability, category, isValid, contributions } = result;
 
   return (
-    <main className="flex-1 bg-slate-50 overflow-y-auto">
+    <main className="flex-1 bg-slate-50">
       <div className="px-6 py-6 flex flex-col gap-4 max-w-2xl">
         {/* 1 ── Dominant risk number */}
         <RiskDisplay
