@@ -1,4 +1,3 @@
-import { MODEL_CONFIG } from "../../config/model";
 import type { RiskCategory } from "../../types/nomogram";
 
 interface Props {
@@ -14,14 +13,12 @@ const CATEGORY_COLOR: Record<RiskCategory, string> = {
   high:         "text-red-600",
 };
 
-const { metadata: md } = MODEL_CONFIG;
-
 export function RiskDisplay({ probability, category, isValid }: Props) {
   if (!isValid) {
     return (
       <div className="rounded-2xl border border-slate-200 bg-white px-8 py-10 text-center">
         <p className="text-[10px] font-semibold uppercase tracking-widest text-slate-400 mb-3">
-          Predicted Distant Metastasis Risk
+          Distant Metastasis Risk
         </p>
         <p className="text-[18px] text-slate-300 font-light">
           Enter valid parameters
@@ -41,7 +38,7 @@ export function RiskDisplay({ probability, category, isValid }: Props) {
   return (
     <div className="rounded-2xl border border-slate-200 bg-white px-8 py-8 text-center">
       <p className="text-[10px] font-semibold uppercase tracking-widest text-slate-400 mb-4">
-        Predicted Distant Metastasis Risk
+        Distant Metastasis Risk
       </p>
 
       {/* The dominant number — sized to be unmissable at a glance */}
@@ -55,16 +52,6 @@ export function RiskDisplay({ probability, category, isValid }: Props) {
         <span className="text-[36px] font-light mt-[14px] ml-0.5 opacity-80">
           .{decimal}%
         </span>
-      </div>
-
-      {/* Two-line footer per spec */}
-      <div className="mt-4 space-y-0.5">
-        <p className="text-[11px] text-slate-400">
-          Based on a multivariable logistic regression model
-        </p>
-        <p className="text-[11px] text-slate-400">
-          Development cohort: n&nbsp;=&nbsp;{md.cohortN}
-        </p>
       </div>
     </div>
   );
