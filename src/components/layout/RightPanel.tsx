@@ -6,6 +6,8 @@ import { ContributionBars }       from "../outputs/ContributionBars";
 import { RiskHeatmap }            from "../outputs/RiskHeatmap";
 import { ClinicalFormulaPanel }   from "../outputs/ClinicalFormulaPanel";
 import { ModelTransparencyPanel } from "../outputs/ModelTransparencyPanel";
+import { AboutModelPanel }        from "../outputs/AboutModelPanel";
+import { ResearchInfoPanel }      from "../outputs/ResearchInfoPanel";
 import type {
   NomogramInputs,
   RiskResult,
@@ -24,8 +26,9 @@ export function RightPanel({ inputs, result, heatmapGrid, contourLines }: Props)
   const { probability, category, isValid, contributions } = result;
 
   return (
-    <main className="flex-1 bg-slate-50">
+    <main className="flex-1 bg-slate-50 overflow-y-auto">
       <div className="px-6 py-6 flex flex-col gap-4 max-w-2xl">
+
         {/* 1 ── Dominant risk number */}
         <RiskDisplay
           probability={probability}
@@ -68,6 +71,13 @@ export function RightPanel({ inputs, result, heatmapGrid, contourLines }: Props)
 
         {/* 8 ── Model transparency (collapsible) */}
         <ModelTransparencyPanel />
+
+        {/* 9 ── About this model (collapsible) */}
+        <AboutModelPanel />
+
+        {/* 10 ── Research software information (collapsible) */}
+        <ResearchInfoPanel />
+
       </div>
     </main>
   );

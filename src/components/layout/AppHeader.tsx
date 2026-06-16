@@ -9,10 +9,10 @@ export function AppHeader() {
         </div>
         <div>
           <p className="text-white text-[13px] font-semibold tracking-wide leading-none">
-            Gastric Cancer Metastasis Risk Calculator
+            Gastric Cancer Distant Metastasis Risk Calculator
           </p>
           <p className="text-white/45 text-[11px] mt-1 leading-none">
-            Dynamic prediction of distant metastasis using a multivariable logistic regression model
+            Research software translating a clinical oncology study into an interactive risk prediction tool
           </p>
         </div>
       </div>
