@@ -11,7 +11,7 @@ export function ResearchToolCard() {
 
       {/* Description */}
       <p className="text-[12px] text-slate-600 leading-relaxed mb-4">
-        Based on a multivariable logistic regression model developed from 114
+        Based on a multivariable logistic regression model developed from
         Vietnamese gastric cancer patients.
       </p>
 
