@@ -1,4 +1,5 @@
 import { RiskDisplay }            from "../outputs/RiskDisplay";
+import { ResearchToolCard }       from "../outputs/ResearchToolCard";
 import { RiskGauge }              from "../outputs/RiskGauge";
 import { RiskCategoryBadge }      from "../outputs/RiskCategoryBadge";
 import { ClinicalInterpretation } from "../outputs/ClinicalInterpretation";
@@ -36,17 +37,20 @@ export function RightPanel({ inputs, result, heatmapGrid, contourLines }: Props)
           isValid={isValid}
         />
 
-        {/* 2 ── Gauge */}
+        {/* 2 ── Research identity card (always visible) */}
+        <ResearchToolCard />
+
+        {/* 3 ── Gauge */}
         <RiskGauge
           probability={probability}
           category={category}
           isValid={isValid}
         />
 
-        {/* 3 ── Category badges */}
+        {/* 4 ── Category badges */}
         <RiskCategoryBadge category={category} isValid={isValid} />
 
-        {/* 4 ── Interpretation */}
+        {/* 5 ── Interpretation */}
         <ClinicalInterpretation
           inputs={inputs}
           probability={probability}
@@ -54,10 +58,10 @@ export function RightPanel({ inputs, result, heatmapGrid, contourLines }: Props)
           isValid={isValid}
         />
 
-        {/* 5 ── Contribution bars */}
+        {/* 6 ── Contribution bars */}
         <ContributionBars contributions={contributions} isValid={isValid} />
 
-        {/* 6 ── Risk landscape heatmap */}
+        {/* 7 ── Risk landscape heatmap */}
         <RiskHeatmap
           cells={heatmapGrid}
           contourLines={contourLines}
@@ -66,16 +70,16 @@ export function RightPanel({ inputs, result, heatmapGrid, contourLines }: Props)
           isValid={isValid}
         />
 
-        {/* 7 ── Clinical formula (collapsible) */}
+        {/* 8 ── Clinical formula (collapsible) */}
         <ClinicalFormulaPanel />
 
-        {/* 8 ── Model transparency (collapsible) */}
+        {/* 9 ── Model transparency (collapsible) */}
         <ModelTransparencyPanel />
 
-        {/* 9 ── About this model (collapsible) */}
+        {/* 10 ── About this model (collapsible) */}
         <AboutModelPanel />
 
-        {/* 10 ── Research software information (collapsible) */}
+        {/* 11 ── Research tool information (collapsible) */}
         <ResearchInfoPanel />
 
       </div>
